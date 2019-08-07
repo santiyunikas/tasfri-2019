@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">TASFRI 2019</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string-array name="android_dropdown_array">
+        <item>kHz</item>
+        <item>MHz</item>
+        <item>GHz</item>
+    </string-array>
+    <string-array name="add_tafri">
+        <item>Add TASFRI</item>
+        <item>Add Application</item>
+        <item>Add Assignment</item>
+    </string-array>
+    <string-array name="satuan">
+        <item>Select Unit</item>
+        <item>kHz</item>
+        <item>MHz</item>
+        <item>GHz</item>
+    </string-array>
+    <string-array name="priority">
+        <item>Priority</item>
+        <item>Primary</item>
+        <item>Secondary</item>
+    </string-array>
+</resources>

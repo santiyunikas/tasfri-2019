@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.tasfri2019">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".FootnoteActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="FOOTNOTE"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+        </activity>
+        <activity
+            android:name=".Assignment.AssignmentActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="ASSIGNMENT"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddtasfriActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="ADD TASFRI"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Application.ApplicationActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="APPLICATIONS"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Allocation.AllocationActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="ALLOCATIONS"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Frequency.FreqActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="FREQUENCY BANDS"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="HOME"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Authentification.AdminsignActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Authentification.SignupActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".OptionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Authentification.LoginActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
