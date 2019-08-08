@@ -6,7 +6,7 @@
     android:background="@drawable/grid"
     android:layout_gravity="center_horizontal"
     android:gravity="left|top"
-    android:weightSum="4"
+    android:layout_weight="4"
     >
     <TextView
         android:id="@+id/col1"
@@ -36,7 +36,8 @@
         android:textColor="@color/colorPrimary"
         style="bold"
         android:padding="3dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        />
 
     <LinearLayout
         android:id="@+id/btn"

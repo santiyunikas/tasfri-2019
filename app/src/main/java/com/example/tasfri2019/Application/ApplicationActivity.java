@@ -165,7 +165,7 @@ public class ApplicationActivity extends AppCompatActivity {
                         aplikasiTx = ds.child("application").getValue().toString();
                         footnoteTx = ds.child("footnote").getValue().toString();
                         freqRangeTx = ds.child("freqRange").getValue().toString();
-                        keyTx =ds.child("freqStart").getValue().toString()+"-"+ds.child("freqEnd").getValue().toString()+"_"+ds.child("satuan").getValue().toString()+"_"+ds.child("application").getValue().toString()+"_"+ds.child("footnote").getValue().toString();
+                        keyTx = ds.child("freqStart").getValue().toString()+"-"+ds.child("freqEnd").getValue().toString()+"_"+ds.child("satuan").getValue().toString()+"_"+ds.child("application").getValue().toString()+"_"+ds.child("footnote").getValue().toString();
 
                         appData[0] = new Aplikasi();
 

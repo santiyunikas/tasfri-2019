@@ -85,7 +85,6 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.HolderApp>{
             holder.btn.setVisibility(View.GONE);
         }
 
-
         holder.freqBands.setText(appData.getFreqStartEnd());
         holder.aplikasi.setText(appData.getApplication());
         holder.footnote.setText(appData.getFootnote());
@@ -104,7 +103,7 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.HolderApp>{
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
                 builder.setTitle(R.string.app_name);
-                builder.setIcon(R.mipmap.ic_launcher);
+                  builder.setIcon(R.mipmap.ic_launcher);
                 builder.setMessage("Are you sure to delete data?")
                         .setCancelable(false)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -163,7 +162,7 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.HolderApp>{
             freqBands = itemView.findViewById(R.id.col1);
             aplikasi = itemView.findViewById(R.id.col2);
             footnote = itemView.findViewById(R.id.col3);
-            remove= itemView.findViewById(R.id.btnRemoveApp);
+            remove = itemView.findViewById(R.id.btnRemoveApp);
             btn = itemView.findViewById(R.id.btn);
         }
     }
