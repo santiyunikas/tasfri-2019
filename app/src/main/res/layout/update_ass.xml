@@ -39,7 +39,7 @@
             android:layout_marginRight="20dp"
             android:padding="10dp"
             android:backgroundTint="@color/colorPrimary"
-            android:entries="@array/priority"
+            android:entries="@array/satuan"
             />
         <EditText
             android:id="@+id/ed_update_apl_ass"
