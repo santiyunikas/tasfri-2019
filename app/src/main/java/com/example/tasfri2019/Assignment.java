@@ -1,4 +1,4 @@
-package com.example.tasfri2019.Assignment;
+package com.example.tasfri2019;
 
 public class Assignment {
     private String FreqStart, FreqEnd, FreqStartEnd, Aplikasi, Instansi, StartDate, EndDate, PrimarySecondary, Satuan, Keterangan;

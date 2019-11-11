@@ -18,10 +18,6 @@ import android.widget.Button;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
-import com.example.tasfri2019.Allocation.AllocationActivity;
-import com.example.tasfri2019.Application.ApplicationActivity;
-import com.example.tasfri2019.Assignment.AssignmentActivity;
-import com.example.tasfri2019.Frequency.FreqActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -36,7 +32,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     FirebaseUser user;
     FirebaseDatabase getDb;
     DatabaseReference reference;
-    Button btnFreq, btnAllo, btnApp, btnAss, btnAdd;
+    Button btnFreq, btnAllo, btnApp, btnAss, btnAdd, btnProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,15 +46,23 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         getDb = FirebaseDatabase.getInstance();
         reference= getDb.getReference();
 
+        btnAdd.setVisibility(View.GONE);
+        btnAss.setVisibility(View.GONE);
+        btnProfile.setVisibility(View.GONE);
+
         if (auth.getUid()!= null){
             reference.child("user").child(user.getUid()).addValueEventListener(new ValueEventListener(){
-
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     Users user = dataSnapshot.getValue(Users.class);
                    if(user.getRole().equalsIgnoreCase("user")){
-                        btnAdd.setVisibility(View.GONE);
-                    }
+                       btnAss.setVisibility(View.VISIBLE);
+                       btnProfile.setVisibility(View.VISIBLE);
+                    }else{
+                       btnAdd.setVisibility(View.VISIBLE);
+                       btnAss.setVisibility(View.VISIBLE);
+                       btnProfile.setVisibility(View.VISIBLE);
+                   }
 
                 }
 
@@ -67,10 +71,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
                 }
             });
-
-        }else{
-            btnAdd.setVisibility(View.GONE);
-            btnAss.setVisibility(View.GONE);
         }
 
         ConnectivityManager cm = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -91,12 +91,14 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         btnApp = findViewById(R.id.btnApp);
         btnAss = findViewById(R.id.btnAss);
         btnAdd = findViewById(R.id.btnAdd);
+        btnProfile = findViewById(R.id.btnProfile);
 
         btnFreq.setOnClickListener(this);
         btnAllo.setOnClickListener(this);
         btnApp.setOnClickListener(this);
         btnAss.setOnClickListener(this);
         btnAdd.setOnClickListener(this);
+        btnProfile.setOnClickListener(this);
     }
 
     @SuppressLint("NewApi")
@@ -167,6 +169,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnAss :
                 startActivity(new Intent(HomeActivity.this, AssignmentActivity.class));
+                break;
+            case R.id.btnProfile :
+                startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
+                break;
         }
     }
 }

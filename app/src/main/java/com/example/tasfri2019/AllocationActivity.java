@@ -1,4 +1,4 @@
-package com.example.tasfri2019.Allocation;
+package com.example.tasfri2019;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -20,15 +20,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
-import com.example.tasfri2019.AddtasfriActivity;
-import com.example.tasfri2019.Allocation.Alokasi;
-import com.example.tasfri2019.Application.Aplikasi;
-import com.example.tasfri2019.Assignment.Assignment;
-import com.example.tasfri2019.FootnoteActivity;
-import com.example.tasfri2019.HomeActivity;
-import com.example.tasfri2019.ItemClickListener;
-import com.example.tasfri2019.OptionActivity;
-import com.example.tasfri2019.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -185,7 +176,7 @@ public class AllocationActivity extends AppCompatActivity {
                         alloData[0].setFreqEnd(freqEndTx);
                         alloData[0].setFreqRange(freqRangeTx);
                         alloData[0].setFreqStart(freqStartTx);
-                        alloData[0].setFreqStartEnd(freqStartEndTx);
+                        alloData[0].setFreqStartEnd(freqStartTx +" - "+ freqEndTx +" "+ satuanTx);
                         alloData[0].setFreqStartEnd_satuan_allocation_aplikasi_footnote_primarySecondary(keyTx);
                         alloData[0].setPrimarySecondary(priorityTx);
                         alloData[0].setSatuan(satuanTx);
@@ -197,7 +188,20 @@ public class AllocationActivity extends AppCompatActivity {
                 }
 
                 if(state==false){
-                    Toast.makeText(AllocationActivity.this, "Can't find data", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(AllocationActivity.this, "Can't find data", Toast.LENGTH_SHORT).show();
+                    AlertDialog.Builder builder = new AlertDialog.Builder(AllocationActivity.this);
+                    builder.setTitle(R.string.app_name);
+                    builder.setIcon(R.mipmap.ic_launcher);
+                    builder.setMessage(R.string.freq_cant_find_data)
+                            .setCancelable(false)
+                            .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+                    AlertDialog alert = builder.create();
+                    alert.show();
+
                     txNull.setVisibility(View.VISIBLE);
                     data.setVisibility(View.GONE);
                 }else{

@@ -1,4 +1,4 @@
-package com.example.tasfri2019.Application;
+package com.example.tasfri2019;
 
 public class Aplikasi {
 

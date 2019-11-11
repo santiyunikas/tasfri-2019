@@ -495,7 +495,7 @@
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="25dp"
                     android:fontFamily="@font/open_sans_light"
-                    android:text="Regency"
+                    android:text="Agency"
                     android:textColor="#02468F"
                     android:textSize="16sp"
                     android:textStyle="bold" />

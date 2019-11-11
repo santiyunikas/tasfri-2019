@@ -35,7 +35,7 @@ public class FootnoteActivity extends AppCompatActivity {
     private EditText ftnoteEd;
     private Button srcFt;
     private LinearLayout data;
-
+//test github sudah connect blom
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

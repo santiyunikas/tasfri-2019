@@ -1,4 +1,4 @@
-package com.example.tasfri2019.Frequency;
+package com.example.tasfri2019;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -19,12 +19,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
-import com.example.tasfri2019.Allocation.AllocationActivity;
-import com.example.tasfri2019.Allocation.Alokasi;
-
-import com.example.tasfri2019.FootnoteActivity;
-import com.example.tasfri2019.OptionActivity;
-import com.example.tasfri2019.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -137,6 +131,8 @@ public class FreqActivity extends AppCompatActivity {
                 boolean state = false;
                 for (DataSnapshot ds : dataSnapshot.getChildren()){
                     if (Double.valueOf(ds.child("freqStart").getValue().toString()) >= Double.valueOf(fromFreqText) && Double.valueOf(ds.child("freqEnd").getValue().toString()) <= Double.valueOf(toFreqText) && ds.child("satuan").getValue().toString().equalsIgnoreCase(spSatuan.getSelectedItem().toString())){
+                        freqStartTx = ds.child("freqStart").getValue().toString();
+                        freqEndTx = ds.child("freqEnd").getValue().toString();
                         allocationTx = ds.child("allocation").getValue().toString();
                         aplikasiTx = ds.child("aplikasi").getValue().toString();
                         freqStartEndTx = ds.child("freqStartEnd").getValue().toString();
@@ -146,7 +142,7 @@ public class FreqActivity extends AppCompatActivity {
 
                         aloData[0] = new Alokasi();
 
-                        aloData[0].setFreqStartEnd(freqStartEndTx);
+                        aloData[0].setFreqStartEnd(freqStartTx+" - "+freqEndTx+" "+ satuanTx);
                         aloData[0].setAplikasi(aplikasiTx);
                         aloData[0].setAllocation(allocationTx);
                         aloData[0].setSatuan(satuanTx);
@@ -154,11 +150,23 @@ public class FreqActivity extends AppCompatActivity {
                         listAlo.add(aloData[0]);
                         state=true;
                     }
-
                 }
 
                 if(state==false){
-                    Toast.makeText(FreqActivity.this, "Can't find data", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(FreqActivity.this, "Can't find data", Toast.LENGTH_SHORT).show();
+                    AlertDialog.Builder builder = new AlertDialog.Builder(FreqActivity.this);
+                    builder.setTitle(R.string.app_name);
+                    builder.setIcon(R.mipmap.ic_launcher);
+                    builder.setMessage(R.string.freq_cant_find_data)
+                            .setCancelable(false)
+                            .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+                    AlertDialog alert = builder.create();
+                    alert.show();
+
                     txNull.setVisibility(View.VISIBLE);
                     data.setVisibility(View.GONE);
                 }else{

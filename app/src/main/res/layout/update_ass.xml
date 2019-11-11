@@ -60,7 +60,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:padding="15dp"
-            android:hint="Instansi"
+            android:hint="Agency"
             android:background="@drawable/edit_text"/>
 
         <EditText

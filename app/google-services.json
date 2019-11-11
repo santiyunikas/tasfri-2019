@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "130349416551-tllnbnljooqov548ikg668kdkcgo1pm7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.santiys.tasfri2019",
+            "certificate_hash": "669bec4cbf7112b514c61df6ef05c52a0c5e81b8"
+          }
+        },
+        {
           "client_id": "130349416551-o998buagujbhs7it69gmeeeis4qgv5cn.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

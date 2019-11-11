@@ -4,6 +4,8 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_menu">MenuActivity</string>
+    <string name="freq_cant_find_data">The application can only display data from :\n\n0 - 30005 kHz\n30.005 - 9800 MHz\n9.8 - 275 GHz\n\nPlease change the frequency and unit</string>
+    <string name="app_cant_find_data">The application can only display data from :\n\n0 - 27000 kHz\n87.5 - 15000 MHz\n0 - 86 GHz\n\nPlease change the frequency and unit</string>
     <string-array name="android_dropdown_array">
         <item>kHz</item>
         <item>MHz</item>
@@ -25,4 +27,5 @@
         <item>Primary</item>
         <item>Secondary</item>
     </string-array>
+
 </resources>

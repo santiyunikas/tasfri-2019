@@ -17,9 +17,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
-import com.example.tasfri2019.Allocation.Alokasi;
-import com.example.tasfri2019.Application.Aplikasi;
-import com.example.tasfri2019.Assignment.Assignment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

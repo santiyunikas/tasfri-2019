@@ -44,18 +44,18 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/logo_login"
                 android:layout_gravity="center"/>
-            <Button
-                android:id="@+id/btn_admin"
-                android:layout_marginTop="25dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Admin"
-                android:textColor="@color/whiteBackground"
-                android:background="#02468F"
-                android:layout_below="@+id/logo_login"
-                />
+            <!--<Button-->
+                <!--android:id="@+id/btn_admin"-->
+                <!--android:layout_marginTop="25dp"-->
+                <!--android:layout_marginLeft="25dp"-->
+                <!--android:layout_marginRight="25dp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Admin"-->
+                <!--android:textColor="@color/whiteBackground"-->
+                <!--android:background="#02468F"-->
+                <!--android:layout_below="@+id/logo_login"-->
+                <!--/>-->
             <Button
                 android:id="@+id/btn_user"
                 android:layout_marginTop="10dp"
@@ -66,7 +66,7 @@
                 android:text="User"
                 android:textColor="@color/whiteBackground"
                 android:background="#02468F"
-                android:layout_below="@+id/btn_admin"
+                android:layout_below="@+id/logo_login"
                 />
             <Button
                 android:id="@+id/btn_guest"

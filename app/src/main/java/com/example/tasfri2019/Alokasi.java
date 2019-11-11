@@ -1,4 +1,4 @@
-package com.example.tasfri2019.Allocation;
+package com.example.tasfri2019;
 
 public class Alokasi {
     private String allocation, aplikasi, freqStart, freqEnd, freqStartEnd, primarySecondary, satuan, footnote, freqRange;

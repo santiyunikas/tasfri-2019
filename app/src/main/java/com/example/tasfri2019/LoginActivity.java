@@ -1,4 +1,4 @@
-package com.example.tasfri2019.Authentification;
+package com.example.tasfri2019;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
@@ -8,13 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.tasfri2019.HomeActivity;
-import com.example.tasfri2019.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -28,6 +27,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText txEmail, txPass;
     private FirebaseAuth auth;
     FirebaseUser user;
+    private TextView forgotPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         showPass.setOnClickListener(this);
         btnLogin.setOnClickListener(this);
+
+        forgotPass = findViewById(R.id.forgot_pass);
+        forgotPass.setOnClickListener(this);
     }
 
     @Override
@@ -62,8 +65,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     //Jika tidak, maka password akan di sembuyikan
                     txPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 }
+                break;
+            case R.id.forgot_pass : startActivity(new Intent(LoginActivity.this, ForgotpassActivity.class));
+            break;
         }
     }
+
+
 
     private void login(){
         //menampung imputan user
@@ -92,6 +100,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             // ketika gagal locin maka akan do something
                             if (task.isSuccessful() && !auth.getCurrentUser().isEmailVerified()){
+                                auth.getCurrentUser().sendEmailVerification();
                                 Toast.makeText(LoginActivity.this, "Verify your account, please check your mailbox", Toast.LENGTH_SHORT).show();
                                 FirebaseAuth.getInstance().signOut();
                             }else {

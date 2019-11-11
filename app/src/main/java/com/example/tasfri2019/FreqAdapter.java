@@ -1,13 +1,11 @@
-package com.example.tasfri2019.Frequency;
+package com.example.tasfri2019;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-import com.example.tasfri2019.Allocation.Alokasi;
-import com.example.tasfri2019.ItemClickListener;
-import com.example.tasfri2019.R;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;

@@ -1,13 +1,9 @@
-package com.example.tasfri2019.Allocation;
+package com.example.tasfri2019;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tasfri2019.OptionActivity;
-import com.example.tasfri2019.Users;
-import com.example.tasfri2019.ItemClickListener;
-import com.example.tasfri2019.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -18,7 +14,6 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
