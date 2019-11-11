@@ -36,6 +36,7 @@ public class FootnoteActivity extends AppCompatActivity {
     private Button srcFt;
     private LinearLayout data;
 //test github sudah connect blom
+    //commit from boobbranch
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
