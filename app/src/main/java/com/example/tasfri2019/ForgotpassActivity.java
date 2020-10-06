@@ -47,7 +47,8 @@ public class ForgotpassActivity extends AppCompatActivity {
     }
 
     private void forgotPass(){
-        if (emailEd.getText().toString()!=null){
+        final String emailUser = emailEd.getText().toString().trim();
+        if (!emailUser.isEmpty()){
             FirebaseAuth.getInstance().sendPasswordResetEmail(emailEd.getText().toString())
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
